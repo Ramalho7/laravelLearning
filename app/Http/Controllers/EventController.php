@@ -2,29 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
+use App\Models\product;
 class EventController extends Controller
 {
     public function index()
     {
-        $nome = "Matheus";
-        $idade = 29;
+        // $nome = "Matheus";
+        // $idade = 29;
 
-        $arr = [10, 20, 30, 40, 50];
+        // $arr = [10, 20, 30, 40, 50];
 
-        $nomes = ["Matheus", "Maria", "João", "Saulo"];
+        // $nomes = ["Matheus", "Maria", "João", "Saulo"];
 
-        return view(
-            'welcome',
-            [
-                'nome' => $nome,
-                'idade2' => $idade,
-                'profissao' => "Programador",
-                'arr' => $arr,
-                'nomes' => $nomes
-            ]
-        );
+        // return view(
+        //     'welcome',
+        //     [
+        //         'nome' => $nome,
+        //         'idade2' => $idade,
+        //         'profissao' => "Programador",
+        //         'arr' => $arr,
+        //         'nomes' => $nomes
+        //     ]
+        // );
+        $product = product::all(); // usando o `all` para ler todos os dados da tabela
+        return dd($product); // `dd` usado para degubar 
     }
 
     public function create()
