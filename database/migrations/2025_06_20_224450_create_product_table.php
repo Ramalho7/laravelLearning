@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('qty');
             $table->text('description');
             $table->text('subDescription');
-            $table->double('preço');
+            $table->double('price');
             $table->string('slug');
             $table->string('image')->nullable();
             $table->unsignedBigInteger('id_user');
