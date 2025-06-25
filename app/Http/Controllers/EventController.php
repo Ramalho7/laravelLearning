@@ -26,8 +26,12 @@ class EventController extends Controller
         //         'nomes' => $nomes
         //     ]
         // );
-        $product = product::all(); // usando o `all` para ler todos os dados da tabela
-        return dd($product); // `dd` usado para degubar 
+        // $product = product::all(); // usando o `all` para ler todos os dados da tabela
+        // return dd($product); // `dd` usado para degubar 
+
+        $name = "Teste";
+
+        return view('home', compact('name'));
     }
 
     public function create()
