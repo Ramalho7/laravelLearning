@@ -11,18 +11,6 @@ use App\Models\Category;
 class ProductController extends Controller
 {
 
-    public function products()
-    {
-        $term = request('search');
-
-        return view('site.products', ['term' => $term]);
-    }
-
-    public function product($id = 1)
-    {
-        return view('site.product', ['id' => $id]);
-    }
-
     public function create()
     {
         $categories = Category::all();
@@ -73,7 +61,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::with('category', 'user')->find($id);
+        $product = Product::with('category', 'user')->findOrFail($id);
         
         if (!$product) {
             return view('product.index', ['product' => null]);
