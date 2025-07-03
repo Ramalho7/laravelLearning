@@ -76,7 +76,7 @@ class ProductController extends Controller
         $product = Product::with('category', 'user')->find($id);
         
         if (!$product) {
-            return view('product.product', ['product' => null]);
+            return view('product.index', ['product' => null]);
         }
         
         return view('product.product', compact('product'));
