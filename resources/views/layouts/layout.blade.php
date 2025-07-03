@@ -74,7 +74,7 @@
     <header>
         <nav>
             <a href="/">Index</a>
-            <a href="/event/create">Event create</a>
+            <a href="/product/create">Product create</a>
             <a href="/products">Products</a>
             <a href="/product">Product</a>
         </nav>

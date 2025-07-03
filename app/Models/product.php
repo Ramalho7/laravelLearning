@@ -9,6 +9,34 @@ class Product extends Model
 {
     use HasFactory;
 
-    // nome da tabela
-    // protected $table = 'product'; // isso a tabela tenha um nome diferente da do model, e nao esteja no plural
+    protected $fillable = [
+        'name',
+        'subdescription', 
+        'mainDescripstion',
+        'price',
+        'qty',
+        'slug',
+        'image',
+        'id_user',
+        'id_category'
+    ];
+
+    // Relacionamentos
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'id_category');
+    }
+
+    public function getImageUrlAttribute()
+    {
+        if ($this->image) {
+            return asset('storage/' . $this->image);
+        }
+        return asset('images/no-image.png');
+    }
 }
