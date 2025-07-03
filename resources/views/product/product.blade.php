@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Produto')
+@section('title', $product->name)
 @section('content')
 
 <style>
